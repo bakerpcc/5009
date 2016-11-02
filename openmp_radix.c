@@ -55,7 +55,7 @@ void radixsort_serial(int *input_array,int input_array_size,int max_digits_size)
 	}
 }
 
-int main9(int argc,char **argv){
+int main(int argc,char **argv){
 	int i,*input,num_of_values=1000,max_value=0,tmp_value=0;
 	int value_length=5,max_digits_size=0;
 	double start_time;
