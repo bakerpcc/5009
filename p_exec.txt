@@ -1,0 +1,17 @@
+mpi:
+
+mpicc -g -Wall -o mpi_hello mpi_hello.c
+mpiexec -n <num of processes> <executable>
+
+mpiexec -n 4 ./mpi_hello
+
+pthreads:
+
+gcc -g -Wall -o pth_hello pth_hello.c -lpthread
+./pth_hello <num of threads>
+
+./pth_hello 4
+
+openmp:
+gcc -g -Wall -fopenmp -o omp_hello omp_hello.c
+./omp_hello 4
