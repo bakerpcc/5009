@@ -2,7 +2,7 @@
 #include<string.h>
 #include<omp.h>
 
-int partition1(int s[],int l,int r)
+int partition(int s[],int l,int r)
 {
 	int i,j,x;
 	if(l<r)
@@ -25,11 +25,11 @@ int partition1(int s[],int l,int r)
 	return i;
 }
 
-void quick_sort1(int s[],int l,int r)
+void quick_sort(int s[],int l,int r)
 {
 	int p;
 	if(l<r){
-		p=partition1(s,l,r);
+		p=partition(s,l,r);
 		#pragma omp parallel 
 		{
 			#pragma omp sections nowait
@@ -44,7 +44,7 @@ void quick_sort1(int s[],int l,int r)
 }
 
 
-void print_2(int x[],int n)
+void print(int x[],int n)
 {
 	int i;
 	for(i=0;i<n;i++)
@@ -59,7 +59,7 @@ int main()
 	int a[10]={7,5,12,6,9,123,969,22,1233,13};
     int l = 0;  
     int r = 9;  
-    quick_sort1(a,l,r);  
-	print_2(a,10);
+    quick_sort(a,l,r);  
+	print(a,10);
 	return 0;
 }
